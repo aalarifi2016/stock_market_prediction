@@ -39,3 +39,9 @@ stock_pridiction/__pycache__/__init__.cpython-39.pyc
 stock_pridiction/__pycache__/settings.cpython-39.pyc
 stock_pridiction/__pycache__/urls.cpython-39.pyc
 stock_pridiction/__pycache__/wsgi.cpython-39.pyc
+stock_prediction/__pycache__/__init__.cpython-39.pyc
+
+stock_prediction/__pycache__/urls.cpython-39.pyc
+stock_prediction/__pycache__/wsgi.cpython-39.pyc
+
+stock_prediction/__pycache__/settings.cpython-39.pyc
