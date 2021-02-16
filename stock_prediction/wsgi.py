@@ -1,5 +1,5 @@
 """
-WSGI config for stock_pridiction project.
+WSGI config for stock_prediction project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
