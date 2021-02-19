@@ -1,7 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 <label>Enter a ticker</label>
-<input type="text" name="ticker" id="ticker">
-<button type="submit">submit</button>
+<form action="" method="post">
+
+    <input type="text" name="ticker" id="ticker" />
+    <button type="submit">submit</button>
+</form>
+
 <p>Price: </p>
 <p>{{request.user}}</p>
 
