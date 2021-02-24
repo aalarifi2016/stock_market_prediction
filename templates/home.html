@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 <label>Enter a ticker</label>
-<form action="" method="post">
+<form action="" method="post">{% csrf_token %}
 
     <input type="text" name="ticker" id="ticker" />
     <button type="submit">submit</button>
 </form>
 
-<p>Price: </p>
-<p>{{request.user}}</p>
+<p>Price: {{ price }}</p>
+
 
 
 <!-- end -->
