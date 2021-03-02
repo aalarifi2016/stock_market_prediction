@@ -3,7 +3,7 @@
 <!-- start block -->
 {% block content %}
 <label>Enter a ticker</label>
-<form action="" method="post">{% csrf_token %}
+<form action="" method="post" id="ticker_form">{% csrf_token %}
 
     <input type="text" name="ticker" id="ticker" />
     <button type="submit">submit</button>
