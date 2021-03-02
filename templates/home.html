@@ -1,17 +1,17 @@
-{% extends 'base.html' %}
-
+{% extends 'base.html' %} {% load static %}
 <!-- start block -->
 {% block content %}
-<label>Enter a ticker</label>
-<form action="" method="post" id="ticker_form">{% csrf_token %}
+<div id="block">
+    <label>Enter a ticker</label>
+    <form action="" method="post" id="ticker_form">{% csrf_token %}
 
-    <input type="text" name="ticker" id="ticker" />
-    <button type="submit">submit</button>
-</form>
+        <input type="text" name="ticker" id="ticker" />
+        <button type="submit">submit</button>
+    </form>
 
-<p>Price: {{ price }}</p>
+    <p>Price: {{ price }}</p>
 
-
+</div>
 
 <!-- end -->
 {% endblock %}
