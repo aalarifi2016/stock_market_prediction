@@ -45,3 +45,7 @@ Header css
     float: left;
     padding: 0px 20px;
 }
+
+.inner_header {
+    background-color: #23d5ab;
+}
