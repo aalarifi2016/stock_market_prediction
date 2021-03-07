@@ -3,10 +3,10 @@
 {% block content %}
 <div class="block">
     <label>Enter a ticker</label>
-    <form action="" method="post" id="ticker_form">{% csrf_token %}
+    <form action="" method="post" id="ticker_form" class="form">{% csrf_token %}
 
-        <input type="text" name="ticker" id="ticker" />
-        <button type="submit">submit</button>
+        <input type="text" name="ticker" class="input_ticker" />
+        <button type="submit" class="submit_btn">submit</button>
     </form>
 
     <p>Price: {{ price }}</p>
