@@ -50,3 +50,4 @@ predict/__pycache__/models.cpython-39.pyc
 stock_prediction/__pycache__/__init__.cpython-39.pyc
 predict/migrations/__pycache__/__init__.cpython-39.pyc
 home_page/__pycache__/__init__.cpython-39.pyc
+.vscode/settings.json

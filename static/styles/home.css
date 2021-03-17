@@ -85,6 +85,22 @@ nav {
     margin-left: 1em;
 }
 
-.form {
-    align-content: center;
+.logo {
+    position: fixed;
+    bottom: 0;
+    left: 10;
+    width: 300px;
+}
+
+.block {
+    position: fixed;
+    top: 50%;
+    left: 20%;
+    border: 1px solid black;
+    padding: 10px;
+    width: 20rem;
+    display: flex;
+    float: left;
+    justify-content: space-around;
+    margin: 25px 50px 75px 100px;
 }
