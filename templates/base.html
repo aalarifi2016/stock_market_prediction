@@ -7,20 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stock Prediction</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static '/../static/styles/home.css'%}">
+    <link rel="stylesheet" href="{% static '/../static/styles/home.css'%}?{% now 'U' %}">
 </head>
 
 <body>
-    <!-- header -->
-    {% include 'base_folder/header.html' %}
+    <div class="grid">
+        <!-- header -->
+        {% include 'base_folder/header.html' %}
 
-    <div class="body">
+
         <!-- block -->
         {% block content %} {% endblock %}
-    </div>
 
-    <!-- footer -->
-    <!-- {% include 'base_folder/footer.html' %} -->
+
+        <!-- footer -->
+        <!-- {% include 'base_folder/footer.html' %} -->
+    </div>
 </body>
 
 </html>

@@ -12,17 +12,22 @@ the base css (for all the pages)
     margin: 0px;
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    column-gap: 1em;
+}
+
 
 /*
 Header css
 */
 
 .header {
-    width: 100%;
     height: 400px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    grid-row: 1;
+    grid-column: 1/5;
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 500% 500%;
     animation: gradient 15s ease infinite;
@@ -41,32 +46,30 @@ Header css
 }
 
 .top_header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    min-height: 6vh;
-    background-color: #5d4954;
+    min-height: 5vh;
+    background-color: rgba(93, 73, 84, 0.5);
     min-width: 100%;
     z-index: 999;
 }
 
-nav {
+.top_header>nav {
     position: absolute;
+    right: 500px;
+    top: 18px;
 }
 
 .nav_links {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
-    /* font-size: 16px; */
     color: #dce0e1;
     display: flex;
-    text-align: center;
+    text-align: right;
+    align-items: flex-start;
     position: fixed;
     list-style: none;
     margin: 0;
     padding: 0;
-    /* width: 100%; */
-    /* justify-content: space-around; */
+    justify-content: space-around;
 }
 
 .nav_links a {
@@ -100,7 +103,7 @@ nav {
     padding: 10px;
     width: 20rem;
     display: flex;
-    float: left;
+    float: right;
     justify-content: space-around;
     margin: 25px 50px 75px 100px;
 }
