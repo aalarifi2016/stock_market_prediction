@@ -14,3 +14,4 @@ six==1.15.0
 sqlparse==0.4.1
 urllib3==1.26.3
 yfinance==0.1.55
+newsapi-python == 0.2.6
