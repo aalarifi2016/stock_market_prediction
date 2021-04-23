@@ -3,14 +3,15 @@ from django.db import models
 
 # Create your models here.
 import yfinance as yf
+from yahoo_fin import stock_info as si
 from newsapi import NewsApiClient
 
 
 def get_price(ticker):
-    stock = yf.Ticker("AAPL")
+    stock = si.get_live_price(ticker)
 
     # get stock price
-    return stock.info['previousClose']
+    return round(stock, 2)
 
 def get_news(ticker):
     # Init
