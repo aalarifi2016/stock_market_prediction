@@ -20,8 +20,8 @@ def get_news(ticker):
     all_articles = newsapi.get_everything(q=ticker,
                                         sources='bbc-news,the-verge',
                                         domains='bbc.co.uk,techcrunch.com',
-                                        from_param='2021-03-09',
-                                        to='2021-04-09',
+                                        from_param='2021-04-09',
+                                        to='2021-04-23',
                                         language='en',
                                         sort_by='relevancy',
                                         page=2)
