@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # created apps locally
-    'predict.apps.PredictConfig',
+    
     'stock_news.apps.StockNewsConfig',
     'stock_price.apps.StockPriceConfig',
     'home_page.apps.HomePageConfig',
