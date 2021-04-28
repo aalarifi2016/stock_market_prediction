@@ -38,7 +38,8 @@
 ehthumbs.db
 Thumbs.db
 
-
+__pycache__/
+_build/
 stock_prediction/__pycache__/urls.cpython-39.pyc
 stock_prediction/__pycache__/wsgi.cpython-39.pyc
 
