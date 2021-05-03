@@ -110,7 +110,7 @@ class Ticker:
         pass
     
     
-    def get_recent_news(self, source='yahoo'):
+    def get_recent_news(self, source='yahoo') -> list:
         """
         get_recent_news [summary]
 
@@ -118,9 +118,9 @@ class Ticker:
 
         :param source: [description], defaults to 'yahoo'
         :type source: str, optional
-        :param market: [description], defaults to None
-        :type market: [type], optional
         :raises ValueError: [description]
+        :return: [description]
+        :rtype: list
         """
         url = ''
         if source == 'yahoo':
@@ -134,13 +134,24 @@ class Ticker:
                 soup = Beatifulsoup(page, 'html.parser')
                 
                 news_list = soup.findall('div', {'class': 'item'})
-                news_urls = []
+                news_urls = {}
                 
                 for news in news_list:
-                    news_urls.append(news.div.a["href"])
+                    news_urls.append({
+                                        'title': news.div.a.text,
+                                        'description': news.div.p.text,    
+                                        'link': news.div.a["href"]
+                    }
+                                     
+                    if len(news_urls) >= 2 :
+                      return news_urls
+                      
+                      
+            
+            return []
+                    
                     
                 
-                    
                 
         
         else:
