@@ -41,8 +41,7 @@ INSTALLED_APPS = [
 
     # created apps locally
     
-    'stock_news.apps.StockNewsConfig',
-    'stock_price.apps.StockPriceConfig',
+    
     'home_page.apps.HomePageConfig',
 
     #third party apps
