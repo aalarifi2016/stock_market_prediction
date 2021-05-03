@@ -24,7 +24,7 @@ See also
 
 '''
 
-from bs4 import beatifulsoup
+from bs4 import BeautifulSoup
 import requests
 
 
@@ -129,9 +129,9 @@ class Ticker:
             
         elif source == 'reuters':
             for market in ['OQ', 'N']:
-                url = _URLs_news['reuters'].format(self.ticker, market)
+                url = self._URLs_news['reuters'].format(self.ticker, market)
                 page = requests.get(url)
-                soup = Beatifulsoup(page, 'html.parser')
+                soup = BeautifulSoup(page, 'html.parser')
                 
                 news_list = soup.findall('div', {'class': 'item'})
                 news_urls = {}
@@ -141,10 +141,10 @@ class Ticker:
                                         'title': news.div.a.text,
                                         'description': news.div.p.text,    
                                         'link': news.div.a["href"]
-                    }
+                    })
                                      
-                    if len(news_urls) >= 2 :
-                      return news_urls
+                if len(news_urls) > 2 :
+                    return news_urls
                       
                       
             
