@@ -1,7 +1,8 @@
-home_page
-=========
+libs
+====
 
 .. toctree::
    :maxdepth: 4
 
-   home_page
+   analayze_news
+   get_data

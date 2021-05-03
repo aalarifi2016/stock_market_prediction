@@ -10,9 +10,11 @@ Welcome to stock prediction tool's documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   introduction <home_page>
-   modules <home_page.get_data>
-   Source Code
+   get data <get_data>
+   analayze news <analayze_news>
+
+   
+   
 
 Indices and tables
 ==================

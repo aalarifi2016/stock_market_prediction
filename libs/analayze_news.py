@@ -1,5 +1,28 @@
 
 
+''' This file  
+
+Summary
+----------
+This library is 
+
+
+
+Functions
+----------
+example: seq
+   The .
+   
+
+R
+-------
+
+
+See also
+--------
+
+'''
+
 
 class NewsAnalyzer:
     """This is a class that analyze the news data
@@ -11,7 +34,13 @@ class NewsAnalyzer:
     
     """
     def __init__(self, data):
-        """Constructor method"""
+        """
+        __init__ constructor
+
+
+        :param data: [description]
+        :type data: .csv file
+        """
         self.df = pd.read_csv(data)
         #TODO: delete the rows that have a Nan values
         #TODO: delete columns [title, description]
@@ -25,21 +54,16 @@ class NewsAnalyzer:
         pass
 
 
+def example(self):
+    """
+    example [summary]
 
-class Model:
-  
-    '''
-     [summary]
-    '''
+    [extended_summary]
+    """
+    pass
 
-    def __init__(self, name, age):
-        '''
-        __init__ [summary]
 
-        :param name: [description]
-        :type name: [type]
-        :param age: [description]
-        :type age: [type]
-        '''
-        self.name = name
-        self.age = age
+
+
+
+    
