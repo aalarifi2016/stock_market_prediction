@@ -29,7 +29,7 @@ import requests
 import time
 import os 
 import wget 
-
+import pprint
 
 
 
@@ -100,7 +100,7 @@ class Ticker:
         else:
             raise ValueError('the source ' + source + 'is not recognized')
         
-    def _scrapping_reuters_news(self, ticker, market) -> list:
+    def _scrapping_reuters_news(self, market) -> list:
         
         """
         a function that scrape the news from reuters
@@ -112,20 +112,36 @@ class Ticker:
         like: Beatifulsoup to get all the news 
         """
         
+        
         pass
     
     
     def get_recent_news(self, source='yahoo') -> list:
         """
-        get_recent_news [summary]
+        a function to get the recent news of a company.
 
         [extended_summary]
 
-        :param source: [description], defaults to 'yahoo'
+        :param source: the source (website) to get the news from. defaults to 'yahoo'
+        :options: 
+            - 'yahoo'
+            - 'reuters'
         :type source: str, optional
-        :raises ValueError: [description]
+        
+        :raises ValueError: if the source option is not recognized
         :return: [description]
         :rtype: list
+        
+        :example:
+        .. highlight:: python
+        .. code-block:: python
+
+            Ticker('AAPL').get_recent_news(source='reuters')[0]
+            >>> {'description': 'Apple Inc said on Monday it has hired former distinguished '
+                'Google scientist Samy Bengio, who left the search giant amid '
+                'turmoil in its artificial intelligence research department.',
+                'link': 'https://www.reuters.com/article/us-apple-research/apple-hires-ex-google-ai-scientist-who-resigned-after-colleagues-firings-idUSKBN2CK1MN',
+                'title': "Apple hires ex-Google AI scientist who resigned after colleagues' "'firings'}
         """
         url = ''
         if source == 'yahoo':
@@ -154,10 +170,7 @@ class Ticker:
                       
             
             return []
-                    
-                    
-                
-                
+                     
         
         else:
             raise ValueError('the source' + source + 'is not recognized')
@@ -209,4 +222,4 @@ class Ticker:
             time.sleep(4)
 
 
-print(Ticker('AAPL').get_recent_news(source='reuters'))
+pprint.pprint((Ticker('AAPL').get_recent_news(source='reuters')[0]))
