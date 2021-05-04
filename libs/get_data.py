@@ -26,6 +26,11 @@ See also
 
 from bs4 import BeautifulSoup
 import requests
+import time
+import os 
+import wget 
+
+
 
 
 class Ticker:
@@ -40,7 +45,7 @@ class Ticker:
 
     _URLs_news = {
         'yahoo': None,
-        'reuters': "https://www.reuters.com/companies/{ticker}.{market}"
+        'reuters': "https://www.reuters.com/companies/{}.{}"
 
     
     }
@@ -89,7 +94,7 @@ class Ticker:
             # this code will check both markets to find which market the ticker is in 
             markets = ['N', 'OQ']
             for market in markets:
-                url = _URLs_news['reuters'].format(self.ticker, market)
+                url = self._URLs_news['reuters'].format(self.ticker, market)
                 
             
         else:
@@ -104,7 +109,7 @@ class Ticker:
         the page will load more content if it has until all the news in its database is shown.
         in order to get all the news, this function will try to mimic the behavior of the user
         (using Selenium) and scroll until the there is no more news, then use parsing library
-        like: beatifulsoup to get all the news 
+        like: Beatifulsoup to get all the news 
         """
         
         pass
@@ -131,10 +136,10 @@ class Ticker:
             for market in ['OQ', 'N']:
                 url = self._URLs_news['reuters'].format(self.ticker, market)
                 page = requests.get(url)
-                soup = BeautifulSoup(page, 'html.parser')
+                soup = BeautifulSoup(page.text, 'html.parser')
                 
-                news_list = soup.findall('div', {'class': 'item'})
-                news_urls = {}
+                news_list = soup.find_all('div', {'class': 'item'})
+                news_urls = []
                 
                 for news in news_list:
                     news_urls.append({
@@ -167,7 +172,8 @@ class Ticker:
     
     
     
-    def historical_data(self, tickers, t1, t2, options='show'):
+    def historical_data(self, t1, t2, options='show'):
+
         """
         download_historical_data [summary]
 
@@ -186,9 +192,9 @@ class Ticker:
     
                 
         # download the data 
-        path = f'{ticker}/historical_data.csv'
-        if not os.path.isfile(f'{ticker}/historical_data.csv'):
-            url = get_url(ticker, t1, t2)
+        path = f'{self.ticker}/historical_data.csv'
+        if not os.path.isfile(f'{self.ticker}/historical_data.csv'):
+            url = get_url(self.ticker, t1, t2)
             
             print('Beginning file download with wget module', end=' ')
             
@@ -201,3 +207,6 @@ class Ticker:
                 
                 
             time.sleep(4)
+
+
+print(Ticker('AAPL').get_recent_news(source='reuters'))
