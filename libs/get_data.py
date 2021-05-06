@@ -34,6 +34,7 @@ import pprint
 
 
 class Ticker:
+    #TODO: write a class to collect the news and prices of a company 
     
     """
      [summary]
@@ -184,26 +185,22 @@ class Ticker:
         pass
     
     
-    
     def historical_data(self, t1, t2, options='show'):
-
         """
-        download_historical_data [summary]
+        [summary]
 
-        [extended_summary]
-
-        :param tickers: [description]
-        :type tickers: [type]
-        :param t1: [description]
-        :type t1: [type]
-        :param t2: [description]
-        :type t2: [type]
-        """
+        :param t1: the starting date in seconds
+        :type t1: int
+        :param t2: the ending date in seconds
+        :type t2: int
+        :param options: [description], defaults to 'show'
+        :type options: str, optional
+        """   
+        
         # tickers (list) -> a list of the tickers needed to be downloaded
         # t1 (int) -> the starting date in seconds
         # t2 (int) -> the ending date in seconds
-    
-                
+        
         # download the data 
         path = f'{self.ticker}/historical_data.csv'
         if not os.path.isfile(f'{self.ticker}/historical_data.csv'):
@@ -221,5 +218,3 @@ class Ticker:
                 
             time.sleep(4)
 
-
-pprint.pprint((Ticker('AAPL').get_recent_news(source='reuters')[0]))
