@@ -23,8 +23,10 @@ See also
 
 '''
 
+import pandas as pd
 
 class NewsAnalyzer:
+        
     """This is a class that analyze the news data
 
     :param data: a file that all the historical news and prices from a specific source 
@@ -33,37 +35,22 @@ class NewsAnalyzer:
 
     
     """
-    def __init__(self, data):
+    def __init__(self, source_file='../csv_data/reuters_news.csv'):
         """
-        __init__ constructor
+        class constructor
 
-
-        :param data: [description]
-        :type data: .csv file
-        """
-        self.df = pd.read_csv(data)
+        :param source_file: [description], defaults to '../csv_data/reuters_news.csv'
+        :type source_file: str, optional
+        """        
+        
+               
+        self.df = pd.read_csv(source_file)
         #TODO: delete the rows that have a Nan values
         #TODO: delete columns [title, description]
 
 
 
-    def example(self):
-        '''
-        example [summary]
-        '''
+    def name(args):
+               
         pass
-
-
-def example(self):
-    """
-    example [summary]
-
-    [extended_summary]
-    """
-    pass
-
-
-
-
-
     
