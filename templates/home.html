@@ -1,22 +1,32 @@
 <!DOCTYPE html> {% extends 'base.html' %} {% load static %}
 <!-- start block -->
 {% block content %}
-<div class="block">
-    <label>Enter a ticker</label>
-    <form action="" method="post" id="ticker_form" class="form">{% csrf_token %}
+<div class="home">
+    <div class="block">
+        <label>Enter a ticker</label>
+        <form action="" method="post" id="ticker_form" class="form">{% csrf_token %}
 
-        <input type="text" name="ticker" class="input_ticker" />
-        <button type="submit" class="submit_btn">submit</button>
-    </form>
+            <input type="text" name="ticker" class="input_ticker" />
+            <button type="submit" class="submit_btn">submit</button>
+        </form>
 
-    <p>Price: {{ price }}</p>
-
-
+        <p>Price: {{ price }}</p>
 
 
-</div>
-<div class="news_block">
-    <p>News: {{ news }}</p>
+
+
+    </div>
+    <div class="news_block">
+        <p style="font: 2em sans-serif;">Latest news</p>
+        {% for item in news %}
+        <div class="item">
+            <a href={{item.link}}>{{item.title}}</a>
+            <p style="font-size: small;">{{ item.description }}</p>
+            <hr />
+        </div>
+
+        {% endfor %}
+    </div>
 </div>
 
 <!-- end -->

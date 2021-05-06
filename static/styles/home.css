@@ -46,7 +46,9 @@ Header css
 }
 
 .top_header {
-    min-height: 5vh;
+    width: 100%;
+    margin: 0 auto;
+    min-height: 6vh;
     background-color: rgba(93, 73, 84, 0.5);
     min-width: 100%;
     z-index: 999;
@@ -54,29 +56,34 @@ Header css
 
 .top_header>nav {
     position: absolute;
-    right: 500px;
-    top: 18px;
+    /* right: 800px;
+    top: 18px; */
 }
 
 .nav_links {
     font-family: "Montserrat", sans-serif;
-    font-weight: 500;
+    /* font-weight: 600; */
     color: #dce0e1;
     display: flex;
-    text-align: right;
-    align-items: flex-start;
-    position: fixed;
+    /* text-align: right;
+    align-items: flex-start; */
+    /* position: fixed; */
     list-style: none;
     margin: 0;
     padding: 0;
     justify-content: space-around;
+    /* float: right; */
+    line-height: 80px;
 }
 
 .nav_links a {
     color: #dce0e1;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 20px;
     text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 4px;
+    margin: 0 10px;
 }
 
 .nav_links a:hover {
@@ -89,21 +96,56 @@ Header css
 }
 
 .logo {
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    left: 10;
+    left: 10; */
     width: 300px;
 }
 
-.block {
-    position: fixed;
-    top: 50%;
-    left: 20%;
-    border: 1px solid black;
-    padding: 10px;
-    width: 20rem;
+.home {
+    position: relative;
     display: flex;
-    float: right;
-    justify-content: space-around;
-    margin: 25px 50px 75px 100px;
+    top: -50%;
+    align-items: center;
+    grid-row: 2;
+    grid-column: 1/5;
+    /* border: 2px solid black; */
+    height: 1000px;
+    margin: 30px;
+}
+
+.block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid black;
+    /* grid-row: 2;
+    grid-column: span; */
+    padding: 10px;
+    width: 60%;
+    height: 10%;
+    display: flex;
+    /* float: right; */
+    justify-content: center;
+    /* margin: 25px 50px 75px 10px; */
+    /* margin: 20px 20px; */
+}
+
+.news_block {
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    border: 1px solid black;
+    display: block;
+    top: 13%;
+    bottom: 10%;
+    width: 60%;
+    height: 85%;
+    /* grid-row: 3; */
+    /* top: 70%; */
+    overflow-y: auto;
+}
+
+.items {
+    float: left;
+    clear: left;
 }
