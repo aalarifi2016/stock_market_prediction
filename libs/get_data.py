@@ -81,7 +81,7 @@ class Ticker:
         
         :Example:
         
-        >>> import os 
+        >>> 
         """
         
         results = []

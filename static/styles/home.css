@@ -145,7 +145,37 @@ Header css
     overflow-y: auto;
 }
 
-.items {
+.item {
     float: left;
     clear: left;
+    margin: 10px;
+}
+
+.item a {
+    text-decoration: none;
+    margin-top: 1em;
+    font-size: small;
+}
+
+.item a:link {
+    color: black;
+    font-weight: bold;
+}
+
+.item a:visited {
+    color: black;
+    font-weight: normal;
+}
+
+.item a:hover {
+    color: blue;
+}
+
+.item p {
+    line-height: 1.5;
+    height: 3em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: x-small;
+    margin-top: 1em;
 }
