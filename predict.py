@@ -5,7 +5,7 @@ import pandas as pd
 
 
 # %%
-data = pd.read_csv('all-data.csv',  names=['sentiment', 'article'])
+data = pd.read_csv('csv_data\\dataset.csv',  names=['sentiment', 'article'])
 
 
 # %%
