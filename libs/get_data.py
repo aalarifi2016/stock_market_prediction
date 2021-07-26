@@ -143,6 +143,7 @@ class Ticker:
                 'link': 'https://www.reuters.com/article/us-apple-research/apple-hires-ex-google-ai-scientist-who-resigned-after-colleagues-firings-idUSKBN2CK1MN',
                 'title': "Apple hires ex-Google AI scientist who resigned after colleagues' "'firings'}
         """
+
         url = ""
         if source == "yahoo":
             # TODO: write a code to get the recent news from yahoo
