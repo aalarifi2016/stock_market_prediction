@@ -64,7 +64,7 @@ class Ticker:
         )
         self.name = soup.find("h1", "D(ib) Fz(18px)").text.split("(")[0].strip()
 
-    def _update_news_file(self, source="yahoo") -> list:
+    def _update_news_file(self, source="yahoo"):
         """
         [summary]
 
@@ -85,6 +85,7 @@ class Ticker:
 
         results = []
         if source == "yahoo":
+            # TODO: add news crawling from yahoo
             pass
 
         elif source == "reuters":
@@ -215,14 +216,17 @@ class Ticker:
         elif method == "pandas":
             return pd_dr.DataReader(self.ticker, data_source="yahoo", start=t1, end=t2)
 
+    def get_price(self):
+        return self.price
+
 
 # if __name__ == '__main':
 #     time_1 = datetime(2019, 1,1)
 #     time_2 = datetime(2020, 1,1)
-print(
-    Ticker("AAPL")._historical_data(
-        datetime(2019, 1, 1),
-        datetime(2020, 1, 1),
-        method="scraping",
-    )
-)
+# print(
+#     Ticker("AAPL")._historical_data(
+#         datetime(2019, 1, 1),
+#         datetime(2020, 1, 1),
+#         method="scraping",
+#     )
+# )

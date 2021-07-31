@@ -12,12 +12,13 @@ the base css (for all the pages)
     margin: 0px;
 }
 
-.grid {
+
+/* .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
     column-gap: 1em;
-}
+} */
 
 
 /*
@@ -55,24 +56,17 @@ Header css
 }
 
 .top_header>nav {
-    position: absolute;
-    /* right: 800px;
-    top: 18px; */
+    float: right;
 }
 
 .nav_links {
     font-family: "Montserrat", sans-serif;
-    /* font-weight: 600; */
     color: #dce0e1;
     display: flex;
-    /* text-align: right;
-    align-items: flex-start; */
-    /* position: fixed; */
     list-style: none;
     margin: 0;
     padding: 0;
     justify-content: space-around;
-    /* float: right; */
     line-height: 80px;
 }
 
@@ -95,12 +89,19 @@ Header css
     margin-left: 1em;
 }
 
-.logo {
-    /* position: fixed;
+
+/* .logo { */
+
+
+/* position: fixed;
     bottom: 0;
     left: 10; */
-    width: 300px;
-}
+
+
+/* width: 300px; */
+
+
+/* } */
 
 .home {
     position: relative;
@@ -117,7 +118,7 @@ Header css
 .block {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 20%;
     border: 1px solid black;
     /* grid-row: 2;
     grid-column: span; */
@@ -137,8 +138,9 @@ Header css
     border: 1px solid black;
     display: block;
     top: 13%;
+    left: 20%;
     bottom: 10%;
-    width: 60%;
+    width: 40%;
     height: 85%;
     /* grid-row: 3; */
     /* top: 70%; */
@@ -178,4 +180,22 @@ Header css
     text-overflow: ellipsis;
     font-size: x-small;
     margin-top: 1em;
+}
+
+
+/* prediction model  */
+
+.show_model {
+    font-family: "Montserrat", sans-serif;
+    position: absolute;
+    border: 1px solid black;
+    display: block;
+    top: 13%;
+    left: 60.2%;
+    bottom: 10%;
+    width: 20.7%;
+    height: 25%;
+    /* grid-row: 3; */
+    /* top: 70%; */
+    overflow-y: auto;
 }
