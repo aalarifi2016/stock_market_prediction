@@ -132,6 +132,69 @@ Header css
     /* margin: 20px 20px; */
 }
 
+
+/* ######### */
+
+
+/* tabs */
+
+
+/* ######### */
+
+.tabs {
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+
+/* tab list item */
+
+.tabs .tabs-list {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tabs .tabs-list li {
+    width: 100px;
+    float: left;
+    margin: 0px;
+    margin-right: 2px;
+    padding: 10px 5px;
+    text-align: center;
+    background-color: cornflowerblue;
+    border-radius: 3px;
+}
+
+.tabs .tabs-list li:hover {
+    cursor: pointer;
+}
+
+.tabs .tabs-list li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* ######### */
+
+
+/* overview */
+
+
+/* ######### */
+
+
+/* ######### */
+
+
+/* new block */
+
+
+/* ######### */
+
 .news_block {
     font-family: "Montserrat", sans-serif;
     position: absolute;

@@ -12,17 +12,26 @@
 
         <p>Price: {{ price }}</p>
     </div>
-
-    <div class="news_block">
-        <p style="font: 2em sans-serif;">Latest news</p>
-        {% for item in news %}
-        <div class="item">
-            <a class="item_link" href="{{ item.link }}" target="_blank">{{item.title}}</a>
-            <p class="item_p" style="font-size: 9;">{{ item.description }}</p>
-            <hr />
+    <div class="tabs">
+        <ul class="tabs-list">
+            <li class="active"><a href="#tab1">overview</a></li>
+            <li><a href="#tab2">latest news</a></li>
+            <li><a href="#tab3">Tab3</a></li>
+        </ul>
+        <div id="tab1" class="overview">
+            <h3>overview</h3>
         </div>
+        <div id="tab2" class="news_block">
+            <p style="font: 2em sans-serif;">Latest news</p>
+            {% for item in news %}
+            <div class="item">
+                <a class="item_link" href="{{ item.link }}" target="_blank">{{item.title}}</a>
+                <p class="item_p" style="font-size: 9;">{{ item.description }}</p>
+                <hr />
+            </div>
 
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
 
     <div class="show_model">
