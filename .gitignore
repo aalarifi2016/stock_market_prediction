@@ -54,5 +54,6 @@ home_page/__pycache__/__init__.cpython-39.pyc
 .vscode/settings.json
 
 env
+.venv
+.env
 test.ipynb
-example.txt

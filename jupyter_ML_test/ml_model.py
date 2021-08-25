@@ -23,7 +23,9 @@ class model:
         """
 
         self.ticker = ticker
+        
         self.all_data = pd.read_csv("csv_data/reuters_news.csv", low_memory=False)
+        print(self.all_data)
         self.data = self.all_data.loc[self.all_data["ticker"] == self.ticker]
         self.data = self.data.dropna(axis=0)
 
@@ -96,4 +98,4 @@ class model:
 if __name__ == "__main__":
     p = model("AAPL")
 
-    # print(p.predict()["root_mean_sqrd_error"])
+    print(p.predict()["score"])
