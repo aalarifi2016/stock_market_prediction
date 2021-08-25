@@ -27,12 +27,12 @@ import requests
 import time
 from datetime import datetime
 import pandas as pd
-import pandas_datareader as pd_dr
+from pandas_datareader import data as pd_dr
 
 
 class Ticker:
     """
-     [summary]
+     this class 
 
     [extended_summary]
     """
@@ -46,7 +46,6 @@ class Ticker:
     }
 
     def __init__(self, ticker) -> None:
-
         """
         __init__ class constructor
 
@@ -57,12 +56,17 @@ class Ticker:
         """
 
         self.ticker = ticker
-        response = requests.get(self._URLs_news["yahoo"].format(ticker, ticker))
+        response = requests.get(
+            self._URLs_news["yahoo"].format(ticker, ticker))
         soup = BeautifulSoup(response.content, "lxml")
+        print(soup)
         self.price = float(
             soup.find("span", "Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)").text
         )
-        self.name = soup.find("h1", "D(ib) Fz(18px)").text.split("(")[0].strip()
+        
+        
+        self.name = soup.find(
+            "h1", "D(ib) Fz(18px)").text.split("(")[0].strip()
 
     def _update_news_file(self, source="yahoo"):
         """
@@ -91,7 +95,7 @@ class Ticker:
         elif source == "reuters":
             # NOTE: there are two options for the markets in the reuters website which are:
             # OQ -> represent NASDAQ
-            # N -> represent the NYSE (New York Stok Exchange)
+            # N -> represent the NYSE (New York Stock Exchange)
             # this code will check both markets to find which market the ticker is in
             markets = ["N", "OQ"]
             for market in markets:
@@ -101,7 +105,6 @@ class Ticker:
             raise ValueError("the source " + source + "is not recognized")
 
     def _scrapping_reuters_news(self, market):
-
         """
         a function that scrape the news from reuters
 
@@ -177,7 +180,6 @@ class Ticker:
             raise ValueError("the source" + source + "is not recognized")
 
     def __str__(self):
-
         """
         a function that returns the name of the ticker's company
 
@@ -205,7 +207,8 @@ class Ticker:
             t2 = time.mktime(t2.timetuple())
 
             # setup the url
-            url = self._URLs_stock_prices["yahoo"].format(self.ticker, int(t1), int(t2))
+            url = self._URLs_stock_prices["yahoo"].format(
+                self.ticker, int(t1), int(t2))
             # read the data into a pandas.dataframe
             pd.options.display.max_rows = None
             pd.options.display.max_columns = None
@@ -220,13 +223,15 @@ class Ticker:
         return self.price
 
 
-# if __name__ == '__main':
-#     time_1 = datetime(2019, 1,1)
-#     time_2 = datetime(2020, 1,1)
-# print(
-#     Ticker("AAPL")._historical_data(
-#         datetime(2019, 1, 1),
-#         datetime(2020, 1, 1),
-#         method="scraping",
-#     )
-# )
+if __name__ == '__main__':
+    #     time_1 = datetime(2019, 1,1)
+    #     time_2 = datetime(2020, 1,1)
+    # print(
+    #     Ticker("AAPL")._historical_data(
+    #         datetime(2019, 1, 1),
+    #         datetime(2020, 1, 1),
+    #         method="scraping",
+    #     )
+    # )
+    a = Ticker('appl')
+    print(a.get_price())
