@@ -4,5 +4,6 @@ libs
 .. toctree::
    :maxdepth: 4
 
-   analayze_news
-   get_data
+   src/introduction
+   src/analayze_news
+   src/get_data
