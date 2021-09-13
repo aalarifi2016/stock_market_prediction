@@ -104,8 +104,9 @@ urllib3==1.26.3
 w3lib==1.22.0
 watchdog==1.0.2
 wcwidth==0.2.5
-websockets==8.1
 wget==3.2
 wordcloud==1.8.1
 yahoo-fin==0.8.8
 yfinance==0.1.55
+fbprophet==0.7.1
+pystan==2.19.1.1 

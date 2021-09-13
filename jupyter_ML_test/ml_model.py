@@ -7,7 +7,7 @@ from sklearn.linear_model import LinearRegression
 from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
-
+# NOTE: this model does not work because it does not take into accont the time series
 class model:
     """
     This class will use multiple linear regression technique to predict the price of a stock company in the near future
@@ -23,7 +23,7 @@ class model:
         """
 
         self.ticker = ticker
-        
+
         self.all_data = pd.read_csv("csv_data/reuters_news.csv", low_memory=False)
         print(self.all_data)
         self.data = self.all_data.loc[self.all_data["ticker"] == self.ticker]
@@ -91,7 +91,7 @@ class model:
             fig.suptitle(title, fontsize=20)
             fig.subplots_adjust(top=2.3)
 
-        plt.imshow(wordcloud)
+        plt.imshow(wordcloud)  # type:ignore
         plt.show()
 
 
