@@ -111,4 +111,4 @@ yfinance==0.1.55
 fbprophet==0.7.1
 pystan==2.19.1.1 
 statsmodels==0.12.2
-pytorch==1.9.0
+torch==1.9.0
