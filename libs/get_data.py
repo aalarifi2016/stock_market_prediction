@@ -60,7 +60,9 @@ class Ticker:
         soup = BeautifulSoup(response.content, "lxml")
         # print(soup)
         self.price = float(
-            soup.find("span", "Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)").text
+            soup.find("span", "Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)").text.replace(
+                ",", ""
+            )
         )
 
         self.name = soup.find("h1", "D(ib) Fz(18px)").text.split("(")[0].strip()
@@ -229,5 +231,5 @@ if __name__ == "__main__":
     #         method="scraping",
     #     )
     # )
-    a = Ticker("AAPL")
+    a = Ticker("GOOG")
     print(a.get_price())

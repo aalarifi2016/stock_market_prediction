@@ -89,6 +89,16 @@ Header css
     margin-left: 1em;
 }
 
+.title {
+    font-size: 50px;
+    position: absolute;
+    width: 100%;
+    top: 3em;
+    /* justify-content: center; */
+    align-content: center;
+    text-align: center;
+}
+
 
 /* .logo { */
 

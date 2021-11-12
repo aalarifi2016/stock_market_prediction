@@ -2,43 +2,52 @@
 <!-- start block -->
 {% block content %}
 <div class="home">
-    <div class="block">
-        <label>Enter a ticker</label>
-        <form action="" method="post" id="ticker_form" class="form">{% csrf_token %}
+  <div class="block">
+    <label>Enter a ticker</label>
+    <form action="" method="post" id="ticker_form" class="form">
+      {% csrf_token %}
 
-            <input type="text" name="ticker" class="input_ticker" />
-            <button type="submit" class="submit_btn">submit</button>
-        </form>
+      <input type="text" name="ticker" class="input_ticker" />
+      <select name="ticker" class="input_ticker">
+        <option value="none">Choose a ticker</option>
+        <option value="AAPL">Apple (AAPL)</option>
+        <option value="GOOG">Google (GOOG)</option>
+        <option value="TSLA">Tesla (TSLA)</option>
+      </select>
+      <button type="submit" class="submit_btn">submit</button>
+    </form>
 
-        <p>Price: {{ price }}</p>
+    <p>Price: {{ price }}</p>
+  </div>
+  <div class="tabs">
+    <ul class="tabs-list">
+      <li class="active"><a href="#tab1">overview</a></li>
+      <li><a href="#tab2">latest news</a></li>
+      <li><a href="#tab3">Tab3</a></li>
+    </ul>
+    <div id="tab1" class="overview">
+      <h3>overview</h3>
     </div>
-    <div class="tabs">
-        <ul class="tabs-list">
-            <li class="active"><a href="#tab1">overview</a></li>
-            <li><a href="#tab2">latest news</a></li>
-            <li><a href="#tab3">Tab3</a></li>
-        </ul>
-        <div id="tab1" class="overview">
-            <h3>overview</h3>
-        </div>
-        <div id="tab2" class="news_block">
-            <p style="font: 2em sans-serif;">Latest news</p>
-            {% for item in news %}
-            <div class="item">
-                <a class="item_link" href="{{ item.link }}" target="_blank">{{item.title}}</a>
-                <p class="item_p" style="font-size: 9;">{{ item.description }}</p>
-                <hr />
-            </div>
+    <div id="tab2" class="news_block">
+      <p style="font: 2em sans-serif">Latest news</p>
+      {% for item in news %}
+      <div class="item">
+        <a class="item_link" href="{{ item.link }}" target="_blank"
+          >{{item.title}}</a
+        >
+        <p class="item_p" style="font-size: 9">{{ item.description }}</p>
+        <hr />
+      </div>
 
-            {% endfor %}
-        </div>
+      {% endfor %}
     </div>
+  </div>
 
-    <div class="show_model">
-        <p>predicted price: </p>
-        <p>Price: {{ price }}</p>
-        <!-- <img src="None" alt=""> -->
-    </div>
+  <div class="show_model">
+    <p>prediction:</p>
+    <p>{{ prediction }}</p>
+    <!-- <img src="None" alt=""> -->
+  </div>
 </div>
 
 <!-- end -->
