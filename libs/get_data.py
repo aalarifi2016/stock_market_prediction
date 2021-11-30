@@ -40,6 +40,7 @@ class Ticker:
     _URLs_news = {
         "yahoo": "https://finance.yahoo.com/quote/{}?p={}",
         "reuters": "https://www.reuters.com/companies/{}.{}",
+        "cnn" : "https://markets.money.cnn.com/research/quote/snapshot.asp?symb={}"
     }
     _URLs_stock_prices = {
         "yahoo": "https://query1.finance.yahoo.com/v7/finance/download/{}?period1={}&period2={}&interval=1d&events=history&includeAdjustedClose=true",
@@ -56,16 +57,12 @@ class Ticker:
         """
 
         self.ticker = ticker
-        response = requests.get(self._URLs_news["yahoo"].format(ticker, ticker))
+        response = requests.get(self._URLs_news["cnn"].format(ticker))
         soup = BeautifulSoup(response.content, "lxml")
+        mytd = soup.find_all("td", class_= "wsod_last")
         # print(soup)
-        self.price = float(
-            soup.find("span", "Trsdu(0.3s) Fw(b) Fz(36px) Mb(-4px) D(ib)").text.replace(
-                ",", ""
-            )
-        )
-
-        self.name = soup.find("h1", "D(ib) Fz(18px)").text.split("(")[0].strip()
+        self.price = float(mytd[0].span.text.replace(',', ''))
+        self.name = soup.find("h1", class_="wsod_fLeft").text.split("(")[0].strip()
 
     def _update_news_file(self, source="yahoo"):
         """
@@ -231,5 +228,5 @@ if __name__ == "__main__":
     #         method="scraping",
     #     )
     # )
-    a = Ticker("GOOG")
+    a = Ticker("AAPL")
     print(a.get_price())
