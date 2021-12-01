@@ -1,12 +1,12 @@
 alabaster==0.7.12
 appdirs==1.4.4
 appnope==0.1.2
-asgiref==3.3.1
+asgiref
 attrs==21.2.0
 Babel==2.9.0
 backcall==0.2.0
 beautifulsoup4==4.9.3
-black==21.5b0
+#black==21.5b0
 bs4==0.0.1
 certifi==2020.12.5
 chardet==4.0.0
