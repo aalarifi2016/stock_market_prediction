@@ -113,3 +113,4 @@ yfinance==0.1.55
 # statsmodels==0.12.2
 # torch==1.9.0
 gunicorn
+django_heroku
