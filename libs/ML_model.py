@@ -1,5 +1,6 @@
 from libs.get_data import Ticker
-from fbprophet import Prophet
+
+# from fbprophet import Prophet
 import numpy as np
 import pandas as pd
 
