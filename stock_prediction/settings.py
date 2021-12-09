@@ -32,7 +32,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["localhost", ".herokuapp.com"]
+ALLOWED_HOSTS = [
+    "localhost",
+    ".herokuapp.com",
+    "https://stockmarketpredictionfit.herokuapp.com/",
+]
 
 
 # Application definition
