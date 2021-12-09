@@ -4,7 +4,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_squared_error
 import pandas as pd
 from sklearn.linear_model import LinearRegression
-from wordcloud import WordCloud, STOPWORDS
+
+# from wordcloud import WordCloud, STOPWORDS
 import matplotlib.pyplot as plt
 
 # NOTE: this model does not work because it does not take into accont the time series
@@ -72,27 +73,27 @@ class model:
             "root_mean_sqrd_error": root_mean_sqrd_error,
         }
 
-    def show_word_cloud(self, title=None):
-        data = self.data["description"]
-        stopwords = set(STOPWORDS)
+    # def show_word_cloud(self, title=None):
+    #     data = self.data["description"]
+    #     stopwords = set(STOPWORDS)
 
-        wordcloud = WordCloud(
-            background_color="white",
-            stopwords=stopwords,
-            max_words=200000,
-            max_font_size=40,
-            scale=3,
-            random_state=1,
-        ).generate(str(data))
+    #     wordcloud = WordCloud(
+    #         background_color="white",
+    #         stopwords=stopwords,
+    #         max_words=200000,
+    #         max_font_size=40,
+    #         scale=3,
+    #         random_state=1,
+    #     ).generate(str(data))
 
-        fig = plt.figure(1, figsize=(6, 6))
-        plt.axis("off")
-        if title:
-            fig.suptitle(title, fontsize=20)
-            fig.subplots_adjust(top=2.3)
+    #     fig = plt.figure(1, figsize=(6, 6))
+    #     plt.axis("off")
+    #     if title:
+    #         fig.suptitle(title, fontsize=20)
+    #         fig.subplots_adjust(top=2.3)
 
-        plt.imshow(wordcloud)  # type:ignore
-        plt.show()
+    #     plt.imshow(wordcloud)  # type:ignore
+    #     plt.show()
 
 
 if __name__ == "__main__":
