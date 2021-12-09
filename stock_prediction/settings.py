@@ -12,7 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+
+# import django_heroku
 
 # from dotenv import load_dotenv, find_dotenv
 
@@ -178,4 +179,4 @@ STATICFILES_DIRS = [
     # os.path.join(BASE_DIR, 'boot'),
 ]
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
