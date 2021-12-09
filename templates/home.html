@@ -1,54 +1,96 @@
 <!DOCTYPE html> {% extends 'base.html' %} {% load static %}
 <!-- start block -->
 {% block content %}
-<div class="home">
-  <div class="block">
-    <label>Enter a ticker</label>
-    <form action="" method="post" id="ticker_form" class="form">
-      {% csrf_token %}
+<div class="container-fluid back">
 
-      <!-- <input type="text" name="ticker" class="input_ticker" /> -->
-      <select name="ticker" class="input_ticker">
-        <option value="none">Choose a ticker</option>
-        <option value="AAPL">Apple (AAPL)</option>
-        <option value="GOOG">Google (GOOG)</option>
-        <option value="TSLA">Tesla (TSLA)</option>
-      </select>
-      <button type="submit" class="submit_btn btn btn-secondary">submit</button>
-    </form>
+  <!-- start of first section-->
+  <div class="row back">
+    <div class="col-2 "></div>
+      <div class="col-sm-12 col-md-6 col-lg-4 result">
+        <div class="result_box">
+          <label><b>Enter a ticker</b></label>
+          <form action="" method="post" id="ticker_form" class="form">
+            {% csrf_token %}
 
-    <p>Price: {{ price }}</p>
-  </div>
-  <div class="tabs">
-    <ul class="tabs-list">
-      <li class="active"><a href="#tab1">overview</a></li>
-      <li><a href="#tab2">latest news</a></li>
-      <li><a href="#tab3">Tab3</a></li>
-    </ul>
-    <div id="tab1" class="overview">
-      <h3>overview</h3>
-    </div>
-    <div id="tab2" class="news_block">
-      <p style="font: 2em sans-serif">Latest news</p>
-      {% for item in news %}
-      <div class="item">
-        <a class="item_link" href="{{ item.link }}" target="_blank"
-          >{{item.title}}</a
-        >
-        <p class="item_p" style="font-size: 9">{{ item.description }}</p>
-        <hr />
+            <!-- <input type="text" name="ticker" class="input_ticker" /> -->
+            <select name="ticker" class="input_ticker">
+              <option value="none">Choose a ticker</option>
+              <option value="AAPL">Apple (AAPL)</option>
+              <option value="GOOG">Google (GOOG)</option>
+              <option value="TSLA">Tesla (TSLA)</option>
+            </select>
+            <button type="submit" class="submit_btn btn btn-info">
+              submit
+            </button>
+          </form>
+          <p class="result"><b>Price: </b><u>{{ price }}</u></p>
+        </div>
+
       </div>
-
-      {% endfor %}
+      <div class="col-sm-12 col-md-6 col-lg-4 prediction">
+        <div class=""show_model>
+          <p class="prediction_word"><b>Prediction:</b></p>
+          <p class="result "> <b><u>{{ prediction }}</u></b></p>
+          <!-- <img src="None" alt=""> -->
+        </div>
+      </div>
     </div>
+    <div class="col-2"></div>
+
+
+  <!-- end of first section-->
+  <!-- -------------------------------------- -->
+  <!-- start of second section-->
+  <div class="row header">
+    <div class="col-2 back"></div>
+      <div class="col-sm-12 col-md-12 col-lg-12 " home>
+
+          <div class="row overview_raw">
+            <div class="col overview">
+              <div id="tab1" class="overview">
+                <h3>overview</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="tabs">
+                
+                <ul class="tabs-list">
+                  <li class="active btn btn-info"><a href="#tab1">overview</a></li>
+                  <li class="btn btn-info"><a href="#tab2">latest news</a></li>
+                  <li class="btn btn-info"><a href="#tab3">Tab3</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="row ">
+            <div class="col-12 news">
+              <div id="tab2" class="news_block">
+                <p style="font: 2em sans-serif">Latest news</p>
+                {% for item in news %}
+                <div class="item">
+                  <a class="item_link" href="{{ item.link }}" target="_blank"
+                    >{{item.title}}</a
+                  >
+                  <p class="item_p" style="font-size: 20">{{ item.description }}</p>
+                  <hr />
+                </div>
+
+                {% endfor %}
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="col"></div>
+    </div>
+    
+
   </div>
 
-  <div class="show_model">
-    <p>prediction:</p>
-    <p>{{ prediction }}</p>
-    <!-- <img src="None" alt=""> -->
-  </div>
+  {% endblock %}
+</div> <!-- end of container-fluid-->
 </div>
-
-<!-- end -->
-{% endblock %}
