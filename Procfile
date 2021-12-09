@@ -1,1 +1,2 @@
-web: python manage.py runserver 0.0.0.0:$PORT
+web: gunicorn stock_prediction.wsgi --log-file -
+
