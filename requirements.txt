@@ -114,3 +114,4 @@ yfinance==0.1.55
 # torch==1.9.0
 gunicorn
 django_heroku
+whitenoise
