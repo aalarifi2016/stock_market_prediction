@@ -176,10 +176,10 @@ LOGGING = {
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    # bootstrap
-    # os.path.join(BASE_DIR, 'boot'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+#     # bootstrap
+#     # os.path.join(BASE_DIR, 'boot'),
+# ]
 
 django_heroku.settings(locals())
