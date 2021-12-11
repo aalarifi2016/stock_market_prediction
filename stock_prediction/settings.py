@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 
-import django_heroku
+# import django_heroku
 
 # from dotenv import load_dotenv, find_dotenv
 
@@ -49,23 +49,23 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     # created apps locally
     "home_page.apps.HomePageConfig",
     # third party apps
 ]
-
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    # Simplified static file serving.
-    # https://warehouse.python.org/project/whitenoise/
-    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "stock_prediction.urls"
@@ -87,6 +87,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = "stock_prediction.wsgi.application"
+# WSGI_APPLICATION = "wsgi.application"
 
 
 # Database
@@ -177,10 +178,10 @@ LOGGING = {
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    # bootstrap
-    # os.path.join(BASE_DIR, 'boot'),
-]
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, "static"),
+#     # bootstrap
+#     # os.path.join(BASE_DIR, 'boot'),
+# ]
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
